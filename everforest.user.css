@@ -1,0 +1,311 @@
+/* ==UserStyle==
+@name Everforest for Redlib
+@namespace github.com/isaac-8601/redlib-everforest
+@homepageURL https://github.com/isaac-8601/redlib-everforest
+@version 0.1.0
+@description Everforest userstyle theme for Redlib
+@author isaac-8601
+@updateURL https://github.com/github.com/isaac-8601/redlib-everforest/raw/main/styles/redlib/redlib.user.css
+@license MIT
+
+@preprocessor less
+@var select variant "Variant" ["light:Light", "dark:Dark"]
+@var select contrast "Contrast" ["soft:Soft", "medium:Medium", "hard:Hard"]
+==/UserStyle== */
+
+@-moz-document domain("libredd.it"),
+domain("libreddit.spike.codes"),
+domain("libreddit.dothq.co"),
+domain("libreddit.kavin.rocks"),
+domain("reddit.invak.id"),
+domain("reddit.phii.me"),
+domain("lr.riverside.rocks"),
+domain("libreddit.strongthany.cc"),
+domain("libreddit.database.red"),
+domain("libreddit.privacy.com.de"),
+domain("libreddit.domain.glass"),
+domain("libreddit.sugoma.tk"),
+domain("libreddit.jamiethalacker.dev"),
+domain("reddit.artemislena.eu"),
+domain("r.nf"),
+domain("libreddit.some-things.org"),
+domain("reddit.stuehieyr.com"),
+domain("lr.mint.lgbt"),
+domain("libreddit.igna.rocks"),
+domain("libreddit.autarkic.org"),
+domain("libreddit.flux.industries"),
+domain("libreddit.drivet.xyz"),
+domain("lr.oversold.host"),
+domain("libreddit.de"),
+domain("libreddit.pussthecat.org"),
+domain("libreddit.mutahar.rocks"),
+domain("libreddit.northboot.xyz"),
+domain("leddit.xyz"),
+domain("de.leddit.xyz"),
+domain("lr.cowfee.moe"),
+domain("libreddit.hu"),
+domain("libreddit.totaldarkness.net"),
+domain("libreddit.esmailelbob.xyz"),
+domain("lr.vern.cc"),
+domain("libreddit.nl"),
+domain("lr.stilic.ml"),
+domain("reddi.tk"),
+domain("libreddit.bus-hit.me"),
+domain("libreddit.datatunnel.xyz"),
+domain("libreddit.crewz.me"),
+domain("r.walkx.org"),
+domain("libreddit.kylrth.com"),
+domain("libreddit.yonalee.eu"),
+domain("libreddit.winscloud.net"),
+domain("libreddit.tiekoetter.com"),
+domain("reddit.rtrace.io"),
+domain("libreddit.lunar.icu"),
+domain("libreddit.privacydev.net"),
+domain("libreddit.notyourcomputer.net"),
+domain("r.ahwx.org"),
+domain("bob.fr.to"),
+domain("reddit.beparanoid.de"),
+domain("libreddit.dcs0.hu"),
+domain("reddit.dr460nf1r3.org"),
+domain("rd.jae.su"),
+domain("libreddit.mha.fi"),
+domain("libreddit.foss.wtf"),
+domain("libreddit.encrypted-data.xyz"),
+domain("libreddit.eu.org"),
+domain("l.opnxng.com"),
+domain("safereddit.com"),
+domain("libreddit.projectsegfau.lt"),
+domain("libreddit.bus-hit.me"),
+domain("reddit.invak.id"),
+domain("redlib.catsarch.com"),
+domain("reddit.idevicehacked.com"),
+domain("redlib.freedit.eu"),
+domain("redlib.perennialte.ch"),
+domain("redlib.tux.pizza"),
+domain("redlib.vimmer.dev"),
+domain("libreddit.privacydev.net"),
+domain("lr.n8pjl.ca"),
+domain("reddit.owo.si"),
+domain("redlib.ducks.party"),
+domain("red.ngn.tf"),
+domain("redlib.dnfetheus.xyz"),
+domain("redlib.cow.rip"),
+domain("libreddit.eu.org"),
+domain("r.darrennathanael.com"),
+domain("redlib.kittywi.re"),
+domain("redlib.privacyredirect.com") {
+  .light,
+  .gruvboxlight {
+    #everforest(@variant, @contrast);
+  }
+
+  .dark,
+  .black,
+  .doomone,
+  .gruvboxdark,
+  .dracula,
+  .gold,
+  .laserwave,
+  .nord,
+  .rosebox,
+  .violet,
+  :root {
+    #everforest(@variant, @contrast);
+    }
+
+
+  #everforest(@variant, @contrast) {
+
+    /* set everforest variables */
+		@fg: @foregrounds[@@variant][@fg];
+		@statusline1: @foregrounds[@@variant][@statusline1];
+		@statusline2: @foregrounds[@@variant][@statusline2];
+		@statusline3: @foregrounds[@@variant][@statusline3];
+		@gray0: @foregrounds[@@variant][@gray0];
+		@gray1: @foregrounds[@@variant][@gray1];
+		@gray2: @foregrounds[@@variant][@gray2];
+
+		@red: @foregrounds[@@variant][@red];
+		@orange: @foregrounds[@@variant][@orange];
+		@yellow: @foregrounds[@@variant][@yellow];
+		@green: @foregrounds[@@variant][@green];
+		@blue: @foregrounds[@@variant][@blue];
+		@aqua: @foregrounds[@@variant][@aqua];
+		@purple: @foregrounds[@@variant][@purple];
+
+
+		@bg_dim: @backgrounds[@@variant][@@contrast][@bg_dim];
+		@bg0: @backgrounds[@@variant][@@contrast][@bg0];
+		@bg1: @backgrounds[@@variant][@@contrast][@bg1];
+		@bg2: @backgrounds[@@variant][@@contrast][@bg2];
+		@bg3: @backgrounds[@@variant][@@contrast][@bg3];
+		@bg4: @backgrounds[@@variant][@@contrast][@bg4];
+		@bg5: @backgrounds[@@variant][@@contrast][@bg5];
+
+		@bg_red: @backgrounds[@@variant][@@contrast][@bg_red];
+		@bg_visual: @backgrounds[@@variant][@@contrast][@bg_visual];
+		@bg_yellow: @backgrounds[@@variant][@@contrast][@bg_yellow];
+		@bg_green: @backgrounds[@@variant][@@contrast][@bg_green];
+		@bg_blue: @backgrounds[@@variant][@@contrast][@bg_blue];
+
+
+     color-scheme: if(@variant = light, light, dark);
+
+    ::selection {
+      color: @fg;
+      background-color: fade(@green, 30%);
+     } 
+      
+    input,
+    textarea {
+      &::placeholder {
+        color: @gray0 !important;
+      }
+    }
+
+    --accent: @green !important;
+    --green: @green !important;
+    --text: @fg !important;
+    --foreground: @bg1 !important;
+    --background: @bg_dim !important;
+    --outside: @bg0 !important;
+    --post: @bg0 !important;
+    --panel-border: none !important;
+    --highlighted: @bg2 !important;
+    --visited: @gray1 !important;
+    --shadow: 0 5px 15px 0 transparent !important;
+
+    --nsfw: @orange !important;
+    --admin: @purple !important;
+    --popup: @red !important;
+  }
+}
+    
+       
+  @backgrounds: {
+    @light: {
+      @soft: {
+        @bg_dim: #e5dfc5;
+        @bg0: #f3ead3;
+        @bg1: #eae4ca;
+        @bg2: #e5dfc5;
+        @bg3: #ddd8be;
+        @bg4: #d8d3ba;
+        @bg5: #b9c0ab;
+        @bg_red: #f4dbd0;
+        @bg_visual: #e1e4bd;
+        @bg_yellow: #f1e4c5;
+        @bg_green: #e5e6c5;
+        @bg_blue: #e1e7dd;
+      };
+      @medium: {
+        @bg_dim: #efebd4;
+        @bg0: #fdf6e3;
+        @bg1: #f4f0d9;
+        @bg2: #efebd4;
+        @bg3: #e6e2cc;
+        @bg4: #e0dcc7;
+        @bg5: #bdc3af;
+        @bg_red: #fbe3da;
+        @bg_visual: #eaedc8;
+        @bg_yellow: #faedcd;
+        @bg_green: #f0f1d2;
+        @bg_blue: #e9f0e9;
+      };
+      @hard: {
+        @bg_dim: #F2EFDF;
+        @bg0: #FFFBEF;
+        @bg1: #F8F5E4;
+        @bg2: #F2EFDF;
+        @bg3: #EDEADA;
+        @bg4: #E8E5D5;
+        @bg5: #BEC5B2;
+        @bg_red: #FFE7DE;
+        @bg_visual: #F0F2D4;
+        @bg_yellow: #FEF2D5;
+        @bg_green: #F3F5D9;
+        @bg_blue: #ECF3ED;
+      };
+     };
+     @dark: {
+      @soft: {
+        @bg_dim: #293136;
+        @bg0: #333c43;
+        @bg1: #3a464c;
+        @bg2: #434f55;
+        @bg3: #4d5960;
+        @bg4: #555f66;
+        @bg5: #5d6b66;
+        @bg_red: #5c3f4f;
+        @bg_visual: #59464c;
+        @bg_yellow: #55544a;
+        @bg_green: #48584e;
+        @bg_blue: #3f5865;
+      };
+      @medium: {
+        @bg_dim: #232a2e;
+        @bg0: #2d353b;
+        @bg1: #343f44;
+        @bg2: #3d484d;
+        @bg3: #475258;
+        @bg4: #4f5258;
+        @bg5: #56635f;
+        @bg_red: #543a48;
+        @bg_visual: #514045;
+        @bg_yellow: #4d4c43;
+        @bg_green: #425047;
+        @bg_blue: #3a515d;
+      };
+      @hard: {
+        @bg_dim: #1E2326;
+        @bg0: #272e33;
+        @bg1: #2E383C;
+        @bg2: #374145;
+        @bg3: #414B50;
+        @bg4: #495156;
+        @bg5: #4F5B58;
+        @bg_red: #4C3743;
+        @bg_visual: #493B40;
+        @bg_yellow: #45443C;
+        @bg_green: #3C4841;
+        @bg_blue: #384B55;
+      };
+     };
+  };
+
+  @foregrounds: {
+    @light: {
+      @red: #F85552;
+      @orange: #F57D26;
+      @yellow: #DFA000;
+      @green: #8DA101;
+      @blue: #3A94C5;
+      @aqua: #35A77C;
+      @purple: #DF69BA;
+      @fg: #5C6A72;
+      @statusline1: #93B259;
+      @statusline2: #708089;
+      @statusline3: #E66868;
+      @gray0: #A6B0A0;
+      @gray1: #939F91;
+      @gray2: #829181;
+    };
+    @dark: {
+      @red: #E67E80;
+      @orange: #E69875;
+      @yellow: #DBBC7F;
+      @green: #A7C080;
+      @blue: #7FBBB3;
+      @aqua: #83C092;
+      @purple: #D699B6;
+      @fg: #D3C6AA;
+      @statusline1: #A7C080;
+      @statusline2: #D3C6AA;
+      @statusline3: #E67E80;
+      @gray0: #7A8478;
+      @gray1: #859289;
+      @gray2: #9DA9A0;
+    };
+};
+
+// vim:ft=less
