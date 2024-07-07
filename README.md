@@ -1,6 +1,11 @@
-# Everforest for [Redlib](https://github.com/redlib-org/redlib)
+# Everforest for Redlib
 
-The [Everforest](https://github.com/sainnhe/everforest) theme ported to the Redlib private front-end for Reddit. Supports both variants (dark, light) and three contrast settings (soft, medium, hard).
+<p align="center">
+  <img src="assets/screenshot.png"/>
+</p>
+
+
+The [Everforest](https://github.com/sainnhe/everforest) theme ported to the [Redlib](https://github.com/redlib-org/redlib) private front-end for Reddit. Supports both variants (dark, light) and three contrast settings (soft, medium, hard).
 
 ## Usage
 
